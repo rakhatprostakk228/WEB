@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .button {
+            background-color: beige;
+            border-radius: 10px;
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+    }
+    .button:hover {
+        background-color: rgb(177, 177, 157);
+    }
+    html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    a {
+        color: #1e90ff; 
+        text-decoration: none;
+    }
+    a:hover {
+        color: #1469be;
+    }
+    </style>
+</head>
+<body style="height: 100%; margin: 0; display: flex; flex-direction: column;">
+    <header>
+        <div class="heading" style="display: flex; justify-content: space-between; background-color: gray;">
+            <h2 class="title" style="padding: 20px;">Contacts</h2>
+            <div class="buttons" style="padding: 20px; display: flex; gap: 15px;">
+                <button onclick="window.location.href='home.html'" class="button">Home</button>
+                <button onclick="window.location.href='hobbies.html'" class="button">Hobbies</button>
+            </div>
+        </div>
+    </header>
+    <main style="flex: 1; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0;">
+        <div class="contacts-box" style="background-color: black; padding: 20px; border-radius: 10px; color: white; max-width: 500px; width: 100%;">
+            <h1 style="text-align: center; margin-bottom: 20px;">Contacts</h1>
+            <ul class="contacts-list" style="list-style: none; padding: 0;">
+                <li class="person" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <img src="images/pavel.jpg" alt="pasha" style="width: 80px; height: 80px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <p style="margin: 0 0 5px;">Pavel</p>
+                    <p style="margin: 0 0 5px;">+7 (777)-777-77-77</p>
+                    <a href="https://t.me/@KanPavel" style="color: #1e90ff; text-decoration: none;">tg: KanPavel</a>
+                </li>
+                <li class="person" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <img src="images/rakhat.jpg" alt="rakha" style="width: 80px; height: 80px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <p style="margin: 0 0 5px;">Rakhat</p>
+                    <p style="margin: 0 0 5px;">+7 (777)-777-77-77</p>
+                    <a href="https://t.me/@KanPavel" style="color: #1e90ff; text-decoration: none;">tg: RakhatProstakk</a>
+                </li>
+                <li class="person" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <img src="images/asyl.jpg" alt="assyl" style="width: 80px; height: 80px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <p style="margin: 0 0 5px;">Assylkhan</p>
+                    <p style="margin: 0 0 5px;">+7 (777)-777-77-77</p>
+                    <a href="https://t.me/@KanPavel" style="color: #1e90ff; text-decoration: none;">tg: FalonC</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer style="background-color: #333; color: white; padding: 20px; text-align: center; position: relative; bottom: 0; width: 100%; bottom: 0;">
+        <div class="footer-content">
+            <p>&copy; All Rights Reserved. Powered by Rakhat, Assylkhan, Pavel</p>
+        </div>
+    </footer>
+</body>
+</html>

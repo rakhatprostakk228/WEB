@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <style type="text/css">
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            background-color: gray;
+            height: 70px;
+        }
+
+        .title {
+            padding: 20px;
+        }
+
+        .buttons {
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .button {
+            background-color: beige;
+            border-radius: 10px;
+            height: 40px;
+            width: 100px;
+            margin: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            bottom: 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+        .button:hover {
+            background-color: rgb(177, 177, 157);
+        }
+        .hobbies-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .name {
+            padding-top: 40px;
+            text-align: center;
+            width: 30%;
+        }
+        .hobby {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <button onclick="window.location.href='home.html'" class="button">Home</button>
+            <button onclick="window.location.href='hobbies.html'" class="button">Hobbies</button>
+        </div>
+    </header>
+    <main>
+        <div class="hobbies-container">
+            <div class="name">
+                <h2>Pavel</h2>
+                <div class="hobby">Pavel is someone who enjoys an active and balanced lifestyle. He loves playing basketball, which keeps him energized and focused. He also values his time spent in church service, where he finds spiritual growth and community. Being with friends is a big part of his life, as he cherishes good conversations and meaningful connections.</div>
+            </div>
+            <div class="name">
+                <h2>Rakhat</h2>
+                <div class="hobby">Really likes swimming, he can swim everyday and never stop to do it, also he likes play football from childhood.He loves reading books in his free time. It’s a great way for him to relax and learn new things.Playing video games is another hobby he enjoys. It’s a fun way for him to unwind and challenge himself, It’s also a great way for him to connect with friends and have a good time together.</div>
+            </div>
+            <div class="name">
+                <h2>Asylkhan</h2>
+                <div class="hobby">I'm a student who loves exploring new things, whether it's diving into the world of cryptocurrency, playing video games, or traveling. I enjoy learning about tech and finance, but I also like to relax with gaming or plan trips to different places. I’m always curious and open to new experiences, whether it’s in the digital world or real life.</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; All Rights Reserved. Powered by Rakhat, Assylkhan, Pavel</p>
+        </div>
+    </footer>
+</body>
+</html>
