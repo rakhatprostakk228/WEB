@@ -1,0 +1,95 @@
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    appearance: none;
+    border: 2px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #061c2d;
+}
+
+.image-container {
+    position: relative;
+    width: 300px;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: scale 0.5s;
+    
+}
+
+.image-container img:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.image-container2 {
+    position: relative;
+    width: 300px;
+    margin: 20px 0;
+}
+
+.image-container2 img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.nav a:hover, .nav a:focus {
+    color: #2196F3;
+    transform: scale(1.1);
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin: 20px 0;
+}
+
+.child {
+    width: 60px;
+    height: 30px;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
