@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+}
+
+main {
+    flex: 1;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.carousel-inner {
+    width: 85%;
+}
+
+.carousel-item img {
+    width: 85%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.navbar-light {
+    background-color: #000000 !important;
+}
+
+a {
+    color: #ffffff !important;
+}
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+}
