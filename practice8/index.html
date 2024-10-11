@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pracice 8</title>
+</head>
+<body>
+
+    <h2>Task1</h2>
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="text">Write a number to convert for a celsius or fahrenheit: </label>
+          <input type="text" id="num" />
+        </div>
+        <div class="form-example">
+          <button onclick="celsius()" type="button" style=" margin-right: 5px; ">To Celsius</button>
+          <button onclick="fahrenheit()" type="button">To Fahrenheit</button>
+        </div>
+
+        <p id="result"></p>
+    </form>
+
+    <h2>Task2</h2>
+    <div>
+        <button onclick="data()" type="button" >Show me the day</button>
+        <p id="result2"></p>
+    </div>
+
+    <h2>Task3</h2>
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="text">Input a year: </label>
+          <input type="text" id="year" />
+        </div>
+        <div class="form-example">
+          <button onclick="leap()" type="button" style=" margin-right: 5px; ">Check if it's leap</button>
+        </div>
+
+        <p id="result3"></p>
+    </form>
+
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="text">Input a word: </label>
+          <input type="text" id="word" />
+        </div>
+        <div class="form-example">
+            <label for="text">Input a number: </label>
+            <input type="text" id="number" />
+          </div>
+        <div class="form-example">
+          <button onclick="remove()" type="button" style=" margin-right: 5px; ">Remove</button>
+        </div>
+
+        <p id="result4"></p>
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>
