@@ -86,3 +86,62 @@ function sortNumbers() {
 
     resultElement.innerHTML = validNumbers.join(', ');
 }
+
+const colors = ["#E40303", "#FF8C00", "#FFED00", "#008026", "#004CFF", "#732982"];
+let currentIndex = 0;
+
+function changeBack() {
+    document.body.style.backgroundColor = colors[currentIndex];
+    currentIndex = (currentIndex + 1) % colors.length;
+}
+
+function displayDateTime() {
+    const dateTimeContainer = document.getElementById('date-time');
+    
+    const now = new Date();
+    
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+    
+    const formattedDateTime = now.toLocaleString('en-US', options);
+    
+    dateTimeContainer.textContent = formattedDateTime;
+}
+
+setInterval(displayDateTime, 1000);
+
+displayDateTime();
+
+function startGame() {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    let guess = null;
+    let attempts = 0;
+
+    while (guess !== randomNumber) {
+        guess = parseInt(prompt("Guess a number between 1 and 100:"));
+        
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+            alert("INVALID!!!(ne ti)");
+            continue;
+        }
+
+        attempts++;
+
+        if (guess > randomNumber) {
+            alert("pereshel");
+        } else if (guess < randomNumber) {
+            alert("ne doshel");
+        } else {
+            alert(`Kutty bolsyn! Ti ugadal ${randomNumber} vsego za ${attempts} popitok.`);
+            document.getElementById("game-result").textContent = `Kutty bolsyn! Ti ugadal ${randomNumber} vsego za ${attempts} popitok.`;
+            break;
+        }
+    }
+}

@@ -24,6 +24,12 @@
         .error {
             color: red;
         }
+        #date-time {
+            margin-left: 40%;
+        }
+        #startGame {
+            margin-left: 45%;
+        }
     </style>
 </head>
 
@@ -34,6 +40,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+            <div id="date-time"> </div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home</a>
@@ -88,6 +95,16 @@
     
             <h4 class="mt-4">Sorted Result:</h4>
             <p id="sortedResult" class="result"></p>
+        </div>
+
+        <div class="container">
+            <h2>Click the button to change the background color</h2>
+            <button class="btn btn-primary" type="button" onclick="changeBack()">Change color</button>
+        </div>
+
+        <div class="container">
+            <button onclick="startGame()" type="button" class="btn btn-primary" id="startGame">Start Game</button>
+            <div id="game-result"></div>
         </div>
     </main>
 
