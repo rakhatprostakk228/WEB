@@ -135,16 +135,6 @@ h2, h3, p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.star {
-    font-size: 30px;
-    color: grey;
-    cursor: pointer;
-}
-
-.star.selected {
-    color: gold !important;
-}
-
 @media (max-width: 576px) {
     .image-container {
         padding: 20px;

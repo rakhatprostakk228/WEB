@@ -9,6 +9,18 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Travel Blog</title>
+    <style>
+        .star {
+            cursor: pointer;
+            font-size: 24px;
+            color: grey !important;
+            transition: color 0.2s;
+        }
+
+        .star.selected {
+            color: gold !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -127,5 +139,25 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const allCardFooters = document.querySelectorAll('.card-footer');
+            allCardFooters.forEach(footer => {
+                const stars = footer.querySelectorAll('.star');
+                
+                stars.forEach((star, index) => {
+                    star.addEventListener('click', function () {
+                        stars.forEach((s, i) => {
+                            if (i <= index) {
+                                s.classList.add('selected');
+                            } else {
+                                s.classList.remove('selected');
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

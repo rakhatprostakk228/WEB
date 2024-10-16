@@ -195,23 +195,3 @@ function changeLanguage() {
     document.getElementById('addressText1').textContent = selectedTexts.addressText1;
     document.getElementById('addressText2').textContent = selectedTexts.addressText2;
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const allCardFooters = document.querySelectorAll('.card-footer');
-
-    allCardFooters.forEach(footer => {
-        const stars = footer.querySelectorAll('.star');
-        
-        stars.forEach((star, index) => {
-            star.addEventListener('click', function () {
-                stars.forEach((s, i) => {
-                    if (i <= index) {
-                        s.classList.add('selected');
-                    } else {
-                        s.classList.remove('selected');
-                    }
-                });
-            });
-        });
-    });
-});
