@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Practice 9</title>
+</head>
+<body>
+
+    <h2>Amount</h2>
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="text">Input a first number: </label>
+          <input type="text" id="num1" />
+        </div>
+        <div class="form-example">
+            <label for="text">Input a second number: </label>
+            <input type="text" id="num2" />
+        </div>
+        <div class="form-example">
+          <button onclick="sum()" type="button">Sum</button>
+        </div>
+
+        <p id="resultOfSum"></p>
+    </form>
+
+    <h2>Square</h2>
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+            <label for="text">Input a number: </label>
+            <input type="text" id="squareNum" />
+        </div>
+        <div class="form-example">
+            <button onclick="square()" type="button">Square</button>
+        </div>
+    
+        <p id="resultOfSquare"></p>
+    </form>
+
+    <h2>Even or odd</h2>
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+            <label for="text">Input a first number: </label>
+            <input type="text" id="st" />
+        </div>
+        <div class="form-example">
+            <label for="text">Input a second number: </label>
+            <input type="text" id="sn" />
+        </div>
+        <div class="form-example">
+            <label for="text">Input a third number: </label>
+            <input type="text" id="rd" />
+        </div>
+        <div class="form-example">
+            <button onclick="evenOrOdd()" type="button">Even or Odd</button>
+        </div>
+
+        <p id="resultOfEven"></p>
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>

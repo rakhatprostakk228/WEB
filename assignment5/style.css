@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.day {
+    background-color: white;
+    color: black;
+}
+
+.night {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.navbar {
+    transition: background-color 0.5s;
+}
+
+.navbar.day {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.night {
+    background-color: #34495e;
+}
+
+main {
+    flex: 1;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.opisanie {
+    font-size: 1rem;
+}
+
+.image-container {
+    background-image: url(images/first.png);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glav {
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+.nizhe {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.start_button {
+    width: 300px;
+    height: 100px;
+    border-radius: 117px;
+    border: none;
+    background-color: #9D7B00;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px #000000;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.3s ease;;
+}
+
+.start_button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #937404;
+}
+
+.navbar-light {
+    background-color: #51a8ff !important;
+}
+
+.paris {
+    background-image: url(images/paris.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.london {
+    background-image: url(images/london.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.argentina {
+    background-image: url(images/argentina.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.brazilia {
+    background-image: url(images/brazilia.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.kazakhstan {
+    background-image: url(images/kazakhstan.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h2, h3, p {
+    color: #000000;
+    -webkit-text-stroke: 0.3px #ffffff !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.star {
+    font-size: 30px;
+    color: grey;
+    cursor: pointer;
+}
+
+.star.selected {
+    color: gold !important;
+}
+
+@media (max-width: 576px) {
+    .image-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .glav {
+        font-size: 3rem;
+    }
+
+    .nizhe {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .start_button {
+        width: 150px;
+        height: 50px;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .image-container {
+        background-position: top;
+        background-size: contain;
+    }
+}
+
+@media (max-width: 768px) {
+    .glav {
+        font-size: 4rem;
+    }
+
+    .nizhe {
+        font-size: 1.5rem;
+    }
+
+    .start_button {
+        width: 200px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .image-container {
+        background-position: center;
+        background-size: cover;
+    }
+}
+
