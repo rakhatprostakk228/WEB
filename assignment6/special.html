@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/travel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <title>Special</title>
+
+    <style>
+        * {
+            font-family: "Oswald", sans-serif;;
+        }
+        .todo-list {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        #date-time {
+            margin-left: 40%;
+        }
+        #startGame {
+            margin-left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Travel Blog</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div id="date-time"> </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="subscribe.html">Subscribe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="special.html">Special <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="todo-list">
+                <h2 class="text-center">To-Do List</h2>
+    
+                <div class="input-group mb-3">
+                    <input type="text" id="taskInput" class="form-control" placeholder="Add a new task">
+                    <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+                </div>
+                <p id="error" class="error"></p>
+    
+                <ul id="taskList" class="list-group"></ul>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <h2>Number Sorting Shtuka</h2>
+            <form id="numberForm" onsubmit="return false">
+                <div class="mb-3">
+                    <label for="numbers" class="form-label">Enter numbers separated by commas:</label>
+                    <input type="text" id="numbers" class="form-control" placeholder="777, 555, 999, 111, 222">
+                    <span id="errorNumbers" class="error"></span>
+                </div>
+    
+                <div class="form-group mb-3">
+                    <label class="form-label">Sort Order:</label>
+                    <select id="sortOrder" class="form-select">
+                        <option value="ascending">Ascending</option>
+                        <option value="descending">Descending</option>
+                    </select>
+                </div>
+    
+                <button type="button" class="btn btn-primary" onclick="sortNumbers()">Sort Numbers</button>
+            </form>
+    
+            <h4 class="mt-4">Sorted Result:</h4>
+            <p id="sortedResult" class="result"></p>
+        </div>
+
+        <div class="container">
+            <button onclick="startGame()" type="button" class="btn btn-primary" id="startGame">Start Game</button>
+            <div id="game-result"></div>
+        </div>
+    </main>
+
+    <footer class="text-center py-2 fixed-bottom">
+        <p>Made by Rakhat, Assylkhan and Pavel</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
