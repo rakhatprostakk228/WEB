@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/travel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="subs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <title>Subscribe</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Travel Blog</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="theme-toggle" onclick="toggleTheme()">🌙</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="subscribe.html">Subscribe <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="special.html">Special</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">Map</a>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                        <option value="kk">Қазақ</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <h1 class="text-center title" id="mainTitle">Hello there</h1>
+        <ul class="list-unstyled text-center mb-5" id="contactInfo">
+            <li id="emailText">hello@welcometravel</li>
+            <li id="phoneText">(707) 7065 9970</li>
+            <li id="addressText1">300 King Street, Melbourne</li>
+            <li id="addressText2">82B, Japan, Tokyo</li>
+        </ul>
+        <p class="text-center opisanie" id="subscribeText">Subscribe to Our Travel Newsletter</p>
+        <form id="subscribeForm" onsubmit="subscribe(event)">
+            <div class="form-group">
+                <input type="text" name="username" id="username" class="form-control mb-3" placeholder="First Name" required>
+                <span id="usernameError" class="error"></span>
+                <input type="email" name="email" id="email" class="form-control mb-3" placeholder="Your Email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg btn-block" id="subscribeButton">Subscribe</button>
+            <div id="successMessage"></div>
+        </form>
+    </main>
+
+    <footer class="text-center py-2 fixed-bottom">
+        <p>Made by Rakhat, Assylkhan and Pavel</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function subscribe(event) {
+            event.preventDefault();
+
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+            const successMessage = document.getElementById('successMessage');
+
+            successMessage.innerHTML = '';
+
+            if (usernameInput.value.trim() === '') {
+                successMessage.innerHTML = 'Пожалуйста, введите ваше имя.';
+                return;
+            }
+
+            const email = emailInput.value.trim();
+            if (email === '') {
+                successMessage.innerHTML = 'Пожалуйста, введите ваш email.';
+                return;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                successMessage.innerHTML = 'Пожалуйста, введите корректный email.';
+                return;
+            }
+
+            successMessage.innerHTML = 'Спасибо за подписку! Мы будем держать вас в курсе.';
+            usernameInput.value = '';
+            emailInput.value = '';
+        }
+    </script>
+
+</body>
+</html>

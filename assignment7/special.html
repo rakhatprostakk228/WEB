@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/travel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <title>Special</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .event {
+            border: 2px solid #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Travel Blog</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div id="date-time"> </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="subscribe.html">Subscribe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="special.html">Special <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">Map</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="quiz-section my-5">
+            <h3 class="text-center">Test Your Travel Knowledge!</h3>
+            <form id="quizForm" class="text-center">
+                <div class="question">
+                    <p>1. What is the capital of France?</p>
+                    <input type="radio" name="q1" value="Paris" required> Paris<br>
+                    <input type="radio" name="q1" value="London"> London<br>
+                    <input type="radio" name="q1" value="Rome"> Rome<br>
+                </div>
+                <div class="question">
+                    <p>2. What is the capital of Kazakhstan?</p>
+                    <input type="radio" name="q2" value="Astana" required> Astana<br>
+                    <input type="radio" name="q2" value="London"> London<br>
+                    <input type="radio" name="q2" value="Rome"> Rome<br>
+                </div>
+                <div class="question">
+                    <p>3. What is the capital of Italy?</p>
+                    <input type="radio" name="q3" value="Rome" required> Rome<br>
+                    <input type="radio" name="q3" value="London"> London<br>
+                    <input type="radio" name="q3" value="Rome"> Rome<br>
+                </div>
+                <div class="question">
+                    <p>4. What is the capital of Russia?</p>
+                    <input type="radio" name="q4" value="Moscow" required> Moscow<br>
+                    <input type="radio" name="q4" value="London"> London<br>
+                    <input type="radio" name="q4" value="Rome"> Rome<br>
+                </div>
+                <div class="question">
+                    <p>5. What is the capital of Korea?</p>
+                    <input type="radio" name="q5" value="Seoul" required> Seoul<br>
+                    <input type="radio" name="q5" value="London"> London<br>
+                    <input type="radio" name="q5" value="Rome"> Rome<br>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Quiz</button>
+            </form>
+            <div id="quizResult" class="mt-3 text-center"></div>
+        </div>        
+    </main>
+
+    <h1 class="text-center mb-4">Dynamic Features</h1>
+
+    <div class="mb-5">
+        <h2>Current Weather in London</h2>
+        <p id="weather">Loading...</p>
+    </div>
+
+    <div id="chart-container" style="width:100%; height:400px;"></div>
+
+    <h2>Travel Timeline</h2>
+    <div class="timeline">
+        <div class="event">2022: Paris trip with family.</div>
+        <div class="event">2023: Solo trip to London.</div>
+        <div class="event">2024: Adventure in Tokyo.</div>
+    </div>
+
+    <footer class="text-center py-2 fixed-bottom">
+        <p>Made by Rakhat, Assylkhan and Pavel</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const answers = {
+                q1: "Paris",
+                q2: "Astana",
+                q3: "Rome",
+                q4: "Moscow",
+                q5: "Seoul"
+            };
+            let score = 0;
+            const formData = new FormData(e.target);
+            for (const [key, value] of formData.entries()) {
+                if (answers[key] === value) score++;
+            }
+            document.getElementById("quizResult").innerText = `Your score is ${score}/5!`;
+        });
+
+        fetch('https://api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&current_weather=true')
+            .then(response => response.json())
+            .then(data => {
+                const weather = data.current_weather;
+                document.getElementById('weather').textContent = `Temperature: ${weather.temperature}°C, Wind Speed: ${weather.windspeed} km/h`;
+            })
+            .catch(err => console.error(err));
+
+        Highcharts.chart('chart-container', {
+            chart: { type: 'bar' },
+            title: { text: 'Popular Travel Destinations' },
+            xAxis: { categories: ['Paris', 'London', 'Tokyo'] },
+            yAxis: { title: { text: 'Number of Visitors (Millions)' } },
+            series: [{ name: '2023', data: [30, 40, 50] }]
+        });
+    </script>
+</body>
+</html>
